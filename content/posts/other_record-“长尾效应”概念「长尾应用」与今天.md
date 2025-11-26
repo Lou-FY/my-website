@@ -1,6 +1,7 @@
 ---
 title: "“长尾效应”概念「长尾应用」与今天"
 date: 2025-11-10
+lastmod: 2025-11-10
 tags:
   - 
 publish: true  

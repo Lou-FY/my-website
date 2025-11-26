@@ -1,6 +1,7 @@
 ---
 title: "lambda写法：不捕获外部变量（non-capturing）"
 date: 2025-11-15
+lastmod: 2025-11-15
 tags:
   - coding
   - 最佳实践

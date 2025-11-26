@@ -1,6 +1,7 @@
 ---
 title: "CUDA 的系统组成-面向他人讲解"
 date: 2025-11-01
+lastmod: 2025-11-01
 tags:
   - 
 publish: true  

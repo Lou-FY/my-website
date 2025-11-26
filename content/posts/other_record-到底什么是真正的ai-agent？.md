@@ -1,6 +1,7 @@
 ---
 title: "到底什么是真正的ai-agent？"
 date: 2025-11-10
+lastmod: 2025-11-10
 tags:
   -  摘录
 publish: true  

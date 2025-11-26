@@ -1,6 +1,7 @@
 ---
 title: "Map的entry方法名字由来「助力记忆」"
 date: 2025-11-13
+lastmod: 2025-11-13
 tags:
   - coding
 publish: true  
