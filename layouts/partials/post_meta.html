@@ -1,0 +1,43 @@
+{{/* 1. 先把 date 和 lastmod 用同一格式格式化，方便比较 */}}
+{{ $date := .Date.Format "2006-01-02" }}
+{{ $lastmod := .Lastmod.Format "2006-01-02" }}
+
+{{- $scratch := newScratch }}
+
+{{/* 2. 显示“发布日期” —— 保留你原来的写法 */}}
+{{- if not .Date.IsZero -}}
+  {{- $scratch.Add "meta" (slice (printf
+    "<span title='%s'>%s</span>"
+    (.Date)
+    (.Date | time.Format (default ":date_long" site.Params.DateFormat))
+  )) }}
+{{- end }}
+
+{{/* 3. 如果 lastmod != date，则额外显示“(updated xxx)” */}}
+{{- if ne $lastmod $date -}}
+  {{- $scratch.Add "meta" (slice (printf
+    "<span title='%s'>(updated %s)</span>"
+    (.Lastmod)
+    (.Lastmod | time.Format (default ":date_long" site.Params.DateFormat))
+  )) }}
+{{- end }}
+
+{{/* 4. 以下是你原来的阅读时间 / 字数 / 作者逻辑，保持不变 */}}
+{{- if (.Param "ShowReadingTime") -}}
+  {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime)))) }}
+{{- end }}
+
+{{- if (.Param "ShowWordCount") -}}
+  {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "words" .WordCount | default (printf "%d words" .WordCount)))) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+  {{- with (partial "author.html" .) }}
+    {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .)) }}
+  {{- end }}
+{{- end }}
+
+{{/* 5. 最后统一输出 meta，保持 safeHTML */}}
+{{- with ($scratch.Get "meta") }}
+  {{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+{{- end -}}
