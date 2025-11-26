@@ -12,12 +12,18 @@ frontmatter:
     - publishDate
     
 pagination:
-  pagerSize: 10
+  pagerSize: 20
 
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+
+outputs:
+    home:
+      - HTML
+      - RSS
+      - JSON   # 搜索需要这个
 
 minify:
   disableXML: true
@@ -26,7 +32,7 @@ minify:
 params:
   env: production
   title: "LouFY'Log"
-  description: "飞宇的学习记录、阅读和碎碎念"
+  description: "my-log"
   keywords: ["Blog", "Notes", "PaperMod"]
   author: "Lou Feiyu"
   DateFormat: "2006-01-02"
@@ -34,9 +40,11 @@ params:
   disableThemeToggle: false
 
   ShowReadingTime: true
-  ShowShareButtons: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
+  ShowShareButtons: false #是否显示分享按钮
+  ShowPostNavLinks: false # 文末「上一篇 / 下一篇」
+  ShowBreadCrumbs: true # 顶部面包屑导航
+  ShowCodeCopyButtons: true    # 代码块右上角复制按钮
+  showtoc: true                # 文章侧边目录
   ShowWordCount: true
   ShowRssButtonInSectionTermList: true
 
@@ -51,6 +59,8 @@ params:
     - name: rss
       url: "index.xml"
 
+  
+
 menu:
   main:
     - identifier: posts
@@ -61,14 +71,20 @@ menu:
       name: Archive
       url: /archives/
       weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30
     - identifier: tags
       name: Tags
       url: /tags/
-      weight: 30
+      weight: 40
     - identifier: faq
       name: FAQ
       url: /faq/
-      weight: 40
+      weight: 50
 caches:
   images:
     dir: :cacheDir/images
+
+

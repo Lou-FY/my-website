@@ -6,7 +6,7 @@
     <description>Recent content on LouFY&#39;Log</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Nov 2025 08:50:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Nov 2025 08:35:44 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「你怎么能直接...」</title>
@@ -189,14 +189,13 @@ A：只是把大模型接入应用，很简单，但是如果需要在特定任�
 &lt;ol&gt;
 &lt;li&gt;安装命令「使用官网脚本安装」：&lt;code&gt;/bin/bash -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;quot;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;检查：&lt;code&gt;brew --version&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;使用{例}：&lt;code&gt;brew install mysql&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用：&lt;code&gt;brew install mysql&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;首次配置参考教程：https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
 注意&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;配置brew本身的镜像源「否则其自身的update将会很慢」&lt;/li&gt;
 &lt;li&gt;配置仓库的镜像源「否则其下载会很慢」&lt;/li&gt;
-&lt;li&gt;dfsg&lt;/li&gt;
 &lt;/ol&gt;</description>
     </item>
   </channel>
