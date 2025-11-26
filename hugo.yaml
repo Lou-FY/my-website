@@ -12,7 +12,7 @@ frontmatter:
     - publishDate
     
 pagination:
-  pagerSize: 5
+  pagerSize: 10
 
 enableRobotsTXT: true
 buildDrafts: false
