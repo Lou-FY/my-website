@@ -4,6 +4,13 @@ theme: ["PaperMod"]
 
 enableGitInfo: true
 
+frontmatter:
+  lastmod:
+    - lastmod        # ✅ 先用 front matter 里的 lastmod
+    - ":git"         # 其次用 Git 的日期
+    - date           # 再不行用 date
+    - publishDate
+    
 pagination:
   pagerSize: 5
 

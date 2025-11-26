@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>摘录 on LouFY&#39;Log</title>
+    <link>http://localhost:1313/tags/%E6%91%98%E5%BD%95/</link>
+    <description>Recent content in 摘录 on LouFY&#39;Log</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%91%98%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>到底什么是真正的ai-agent？</title>
+      <link>http://localhost:1313/posts/other_record-%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84ai-agent/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/other_record-%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84ai-agent/</guid>
+      <description>&lt;p&gt;注：观点来自&lt;a href=&#34;https://www.zhihu.com/people/9fa2264946e6a0ed6d2473a72315e47d&#34;&gt;锦恢&lt;/a&gt;
+注：内容来自&lt;a href=&#34;https://www.zhihu.com/pin/1947313576361562163&#34;&gt;该帖子评论区的回答&lt;/a&gt;
+Q：训练岗应该能无缝转agent算法开发吧
+A：只是把大模型接入应用，很简单，但是如果需要在特定任务上不微调模型的情况下把准确率提升到95%以上，就很难了。目前agent开发难点不在接入一个agent框架上，这件事没有任何技术难度，难在不断调整策略，在业务数据的迭代中设计出可以满足客户要求的准确率和可靠性的系统。后训练模型只是一种解决思路，但是考虑到成本和实际的性能，频繁使用这个方法和只使用这个方法都是不可靠的。事实上，大模型到最终落地之间有一道很大的鸿沟，这道鸿沟就是agent开发的发力空间。很多纯算法出身的人都认为只要大模型一训好，就能自动落地让客户满意，事实上，并非如此。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

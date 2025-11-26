@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Coding on LouFY&#39;Log</title>
+    <link>http://localhost:1313/tags/coding/</link>
+    <description>Recent content in Coding on LouFY&#39;Log</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 15 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>lambda写法：不捕获外部变量（non-capturing）</title>
+      <link>http://localhost:1313/posts/code_trail-javaapi-from-dev-java-lambda%E5%86%99%E6%B3%95%E4%B8%8D%E6%8D%95%E8%8E%B7%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8Fnon-capturing/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/code_trail-javaapi-from-dev-java-lambda%E5%86%99%E6%B3%95%E4%B8%8D%E6%8D%95%E8%8E%B7%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8Fnon-capturing/</guid>
+      <description>&lt;p&gt;#最佳实践
+一般来说不会有这个问题，老老实实进行“定义接口-&amp;gt;写实现类/匿名类-&amp;gt;new对象-&amp;gt;调用方法”自然会进行变量层面的抽象。
+但lambda这种语法糖太简洁了，导致写的时候会忍不住追求更方便写法，导致jvm运行时的不方便&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;List&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;String&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; strings &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; List.&lt;span style=&#34;color:#a6e22e&#34;&gt;of&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;one&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;two&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;three&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;four&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;five&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;six&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;seven&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Map&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer, String&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; map &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; HashMap&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (String word: strings) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; length &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; word.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    map.&lt;span style=&#34;color:#a6e22e&#34;&gt;merge&lt;/span&gt;(length, word, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              (existingValue, newWord) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; existingValue &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;, &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; newWord);&lt;span style=&#34;color:#75715e&#34;&gt;//如果length不在map中，会绑定到word；如果存在，会用现有值和word调用双函数，双函数的结果替换当前值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;map.&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;((key, value) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; IO.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(key &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; :: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; value));
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;为什么这些lambda明明可以直接用外面的变量，如上面的newword，但还要把它作为一个参数传进来？
+&lt;ul&gt;
+&lt;li&gt;可以让lambda变成“non-capturing”（不捕获外部变量），性能更好&lt;/li&gt;
+&lt;li&gt;对于non-capturing，JVM 可以把它当成&lt;strong&gt;纯函数对象、无状态对象&lt;/strong&gt;来优化
+&lt;ul&gt;
+&lt;li&gt;可以实现成&lt;strong&gt;一个没有字段的单例对象&lt;/strong&gt;，甚至整个程序里就用这一份；一次创建，到处复用。&lt;/li&gt;
+&lt;li&gt;不需要每次创建新对象；&lt;/li&gt;
+&lt;li&gt;更容易被 JIT 内联、优化。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;如果进行捕获了，lambda 用到了外部的变量，编译器必须生成一个&lt;strong&gt;带字段的对象&lt;/strong&gt;，里面存着 bonus 的值。在某些场景下，甚至每次使用都要 new 一份（或者至少要为每个不同捕获环境生成不同实例），&lt;strong&gt;分配成本更高，优化空间更小&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Map的entry方法名字由来「助力记忆」</title>
+      <link>http://localhost:1313/posts/code_trail-javaapi-from-dev-java-map%E7%9A%84entry%E6%96%B9%E6%B3%95%E5%90%8D%E5%AD%97%E7%94%B1%E6%9D%A5%E5%8A%A9%E5%8A%9B%E8%AE%B0%E5%BF%86/</link>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/code_trail-javaapi-from-dev-java-map%E7%9A%84entry%E6%96%B9%E6%B3%95%E5%90%8D%E5%AD%97%E7%94%B1%E6%9D%A5%E5%8A%A9%E5%8A%9B%E8%AE%B0%E5%BF%86/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;大伙自然地将entry和键值对联系在一起**“一个键值对就是一个 entry”**，于是java官方就把其作为造键值对的静态方法名&lt;/li&gt;
+&lt;li&gt;为什么会“自然地将entry和键值对联系在一起”？
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;entry&lt;/em&gt; 有“目录/词典里的一个条目”语义&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;map&lt;/em&gt;也很像词典/目录：词头、释义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>

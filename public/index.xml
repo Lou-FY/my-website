@@ -2,18 +2,202 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>LouFY&#39;Log</title>
-    <link>https://loufy03.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on LouFY&#39;Log</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Nov 2025 04:54:29 +0800</lastBuildDate>
-    <atom:link href="https://loufy03.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Nov 2025 08:50:23 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test 2</title>
-      <link>https://loufy03.com/posts/test-2/</link>
-      <pubDate>Wed, 26 Nov 2025 04:54:29 +0800</pubDate>
-      <guid>https://loufy03.com/posts/test-2/</guid>
-      <description>&lt;p&gt;qefq&lt;/p&gt;</description>
+      <title>「你怎么能直接...」</title>
+      <link>http://localhost:1313/posts/%E4%B8%AA%E4%BA%BA-%E4%BD%A0%E6%80%8E%E4%B9%88%E8%83%BD%E7%9B%B4%E6%8E%A5.../</link>
+      <pubDate>Wed, 26 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E4%B8%AA%E4%BA%BA-%E4%BD%A0%E6%80%8E%E4%B9%88%E8%83%BD%E7%9B%B4%E6%8E%A5.../</guid>
+      <description>&lt;p&gt;有好多版本，好有意思&lt;/p&gt;
+&lt;h2 id=&#34;git&#34;&gt;git&lt;/h2&gt;
+&lt;p&gt;你怎么能直接 commit 到我的 main 分支啊？！GitHub 上不是这样！你应该先 fork 我的仓库，然后从 develop 分支 checkout 一个新的 feature 分支，比如叫 feature/confession。然后你把你的心意写成代码，并为它写好单元测试和集成测试，确保代码覆盖率达到95%以上。接着你要跑一下 Linter，通过所有的代码风格检查。然后你再 commit，commit message 要遵循 Conventional Commits 规范。之后你把这个分支 push 到你自己的远程仓库，然后给我提一个 Pull Request。在 PR 描述里，你要详细说明你的功能改动和实现思路，并且 @ 我和至少两个其他的评审。我们会 review 你的代码，可能会留下一些评论，你需要解决所有的 thread。等 CI/CD 流水线全部通过，并且拿到至少两个 LGTM 之后，我才会考虑把你的分支 squash and merge 到 develop 里，等待下一个版本发布。你怎么直接上来就想 force push 到 main？！GitHub 上根本不是这样！我拒绝合并！&lt;/p&gt;
+&lt;h2 id=&#34;rag系统&#34;&gt;RAG系统&lt;/h2&gt;
+&lt;p&gt;你怎么能直接 client.chat.completions.create 去调大模型啊？！企业级 RAG 系统里不是这样！你应该先通过 ETL 流水线把 PDF 和 PPT 清洗一遍，跑一遍 OCR 和 Layout Analysis 提取图片里的图表信息。接着你要用 Recursive Character Text Splitter 按照语义完整性做 Chunking，并调用 CLIP 或者 BGE-M3 模型生成多模态 Embeddings。然后你要把这些高维向量存进 Milvus 或者 Weaviate，构建好 HNSW 索引。接着用户提问的时候，你要先做 Query Rewriting，生成多路查询，去走一遍 Hybrid Search，同时结合 BM25 关键词和 Dense Vector 召回 Top-K 文档。然后你要过一遍 Cross-Encoder 的 Reranker 模型，把 Relevancy Score 低的脏数据过滤掉。之后你把这些图文切片按照 Token Limit 精心塞进 Prompt Template 的 Context Window 里，并严格要求模型基于引用回答。在生成 Response 之前，你要跑一遍 Guardrails 甚至用 RAGAS 框架做一轮评估，检查有没有幻觉，确保 Faithfulness 和 Answer Relevance 分数达标。等 Grounding Check 全部通过，并且没有触发 Sensitive Word Filter 之后，我才会考虑把 token 一个个 stream 推回给前端，等待用户反馈。你怎么直接上来就想裸调 API 靠模型瞎编？！知识库增强根本不是这样！我拒绝生成！&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lambda写法：不捕获外部变量（non-capturing）</title>
+      <link>http://localhost:1313/posts/code_trail-javaapi-from-dev-java-lambda%E5%86%99%E6%B3%95%E4%B8%8D%E6%8D%95%E8%8E%B7%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8Fnon-capturing/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/code_trail-javaapi-from-dev-java-lambda%E5%86%99%E6%B3%95%E4%B8%8D%E6%8D%95%E8%8E%B7%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8Fnon-capturing/</guid>
+      <description>&lt;p&gt;#最佳实践
+一般来说不会有这个问题，老老实实进行“定义接口-&amp;gt;写实现类/匿名类-&amp;gt;new对象-&amp;gt;调用方法”自然会进行变量层面的抽象。
+但lambda这种语法糖太简洁了，导致写的时候会忍不住追求更方便写法，导致jvm运行时的不方便&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;List&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;String&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; strings &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; List.&lt;span style=&#34;color:#a6e22e&#34;&gt;of&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;one&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;two&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;three&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;four&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;five&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;six&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;seven&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Map&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer, String&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; map &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; HashMap&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (String word: strings) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; length &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; word.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    map.&lt;span style=&#34;color:#a6e22e&#34;&gt;merge&lt;/span&gt;(length, word, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              (existingValue, newWord) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; existingValue &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;, &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; newWord);&lt;span style=&#34;color:#75715e&#34;&gt;//如果length不在map中，会绑定到word；如果存在，会用现有值和word调用双函数，双函数的结果替换当前值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;map.&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;((key, value) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; IO.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(key &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; :: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; value));
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;为什么这些lambda明明可以直接用外面的变量，如上面的newword，但还要把它作为一个参数传进来？
+&lt;ul&gt;
+&lt;li&gt;可以让lambda变成“non-capturing”（不捕获外部变量），性能更好&lt;/li&gt;
+&lt;li&gt;对于non-capturing，JVM 可以把它当成&lt;strong&gt;纯函数对象、无状态对象&lt;/strong&gt;来优化
+&lt;ul&gt;
+&lt;li&gt;可以实现成&lt;strong&gt;一个没有字段的单例对象&lt;/strong&gt;，甚至整个程序里就用这一份；一次创建，到处复用。&lt;/li&gt;
+&lt;li&gt;不需要每次创建新对象；&lt;/li&gt;
+&lt;li&gt;更容易被 JIT 内联、优化。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;如果进行捕获了，lambda 用到了外部的变量，编译器必须生成一个&lt;strong&gt;带字段的对象&lt;/strong&gt;，里面存着 bonus 的值。在某些场景下，甚至每次使用都要 new 一份（或者至少要为每个不同捕获环境生成不同实例），&lt;strong&gt;分配成本更高，优化空间更小&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Map的entry方法名字由来「助力记忆」</title>
+      <link>http://localhost:1313/posts/code_trail-javaapi-from-dev-java-map%E7%9A%84entry%E6%96%B9%E6%B3%95%E5%90%8D%E5%AD%97%E7%94%B1%E6%9D%A5%E5%8A%A9%E5%8A%9B%E8%AE%B0%E5%BF%86/</link>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/code_trail-javaapi-from-dev-java-map%E7%9A%84entry%E6%96%B9%E6%B3%95%E5%90%8D%E5%AD%97%E7%94%B1%E6%9D%A5%E5%8A%A9%E5%8A%9B%E8%AE%B0%E5%BF%86/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;大伙自然地将entry和键值对联系在一起**“一个键值对就是一个 entry”**，于是java官方就把其作为造键值对的静态方法名&lt;/li&gt;
+&lt;li&gt;为什么会“自然地将entry和键值对联系在一起”？
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;entry&lt;/em&gt; 有“目录/词典里的一个条目”语义&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;map&lt;/em&gt;也很像词典/目录：词头、释义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>“长尾效应”概念「长尾应用」与今天</title>
+      <link>http://localhost:1313/posts/other_record-%E9%95%BF%E5%B0%BE%E6%95%88%E5%BA%94%E6%A6%82%E5%BF%B5%E9%95%BF%E5%B0%BE%E5%BA%94%E7%94%A8%E4%B8%8E%E4%BB%8A%E5%A4%A9/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/other_record-%E9%95%BF%E5%B0%BE%E6%95%88%E5%BA%94%E6%A6%82%E5%BF%B5%E9%95%BF%E5%B0%BE%E5%BA%94%E7%94%A8%E4%B8%8E%E4%BB%8A%E5%A4%A9/</guid>
+      <description>&lt;p&gt;“长尾”指的是：&lt;strong&gt;主流需求之外，那条又长又细、数量巨大的“小需求带”&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;除开很多人需求外，还有一部分“细长”区域，特点是
+&lt;ul&gt;
+&lt;li&gt;每个需求对应的人数不是那么多&lt;/li&gt;
+&lt;li&gt;需求种类很多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;以前没人管这条尾巴，原因：软件开发成本高：人工成本、维护成本、需要“比较规范”才上线&lt;/li&gt;
+&lt;li&gt;现在：&lt;strong&gt;LLM、app生成工具、低成本部署&lt;/strong&gt;使得面向特定小群体的app也值得一做。应用=内容，如15年前YouTube兴起一样&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>到底什么是真正的ai-agent？</title>
+      <link>http://localhost:1313/posts/other_record-%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84ai-agent/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/other_record-%E5%88%B0%E5%BA%95%E4%BB%80%E4%B9%88%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84ai-agent/</guid>
+      <description>&lt;p&gt;注：观点来自&lt;a href=&#34;https://www.zhihu.com/people/9fa2264946e6a0ed6d2473a72315e47d&#34;&gt;锦恢&lt;/a&gt;
+注：内容来自&lt;a href=&#34;https://www.zhihu.com/pin/1947313576361562163&#34;&gt;该帖子评论区的回答&lt;/a&gt;
+Q：训练岗应该能无缝转agent算法开发吧
+A：只是把大模型接入应用，很简单，但是如果需要在特定任务上不微调模型的情况下把准确率提升到95%以上，就很难了。目前agent开发难点不在接入一个agent框架上，这件事没有任何技术难度，难在不断调整策略，在业务数据的迭代中设计出可以满足客户要求的准确率和可靠性的系统。后训练模型只是一种解决思路，但是考虑到成本和实际的性能，频繁使用这个方法和只使用这个方法都是不可靠的。事实上，大模型到最终落地之间有一道很大的鸿沟，这道鸿沟就是agent开发的发力空间。很多纯算法出身的人都认为只要大模型一训好，就能自动落地让客户满意，事实上，并非如此。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>迭代和遍历翻译问题iteration</title>
+      <link>http://localhost:1313/posts/code_trail-javaapi-from-dev-java-%E8%BF%AD%E4%BB%A3%E5%92%8C%E9%81%8D%E5%8E%86%E7%BF%BB%E8%AF%91%E9%97%AE%E9%A2%98iteration/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/code_trail-javaapi-from-dev-java-%E8%BF%AD%E4%BB%A3%E5%92%8C%E9%81%8D%E5%8E%86%E7%BF%BB%E8%AF%91%E9%97%AE%E9%A2%98iteration/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;看&lt;code&gt;dev.java&lt;/code&gt;，学集合框架时，原文写了iteration，翻译总翻成遍历，觉得奇怪&lt;/p&gt;
+&lt;h2 id=&#34;结论&#34;&gt;结论&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;都可以。“iterate” 既可以表示 “迭代”，也可以表示 “遍历”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;iterate演化出两层含义&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;机械地重复执行&lt;/strong&gt;（即迭代算法中“反复求近似解”那种含义）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;依次访问集合中的每个元素&lt;/strong&gt;（即遍历集合）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编程中&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;“迭代器（iterator）” 是一种机制&lt;/li&gt;
+&lt;li&gt;“遍历（iteration）” 是这种机制实现的动作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/39854900&#34;&gt;https://www.zhihu.com/question/39854900&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>CUDA 的系统组成-面向他人讲解</title>
+      <link>http://localhost:1313/posts/code_trail-cuda-%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%BB%84%E6%88%90-%E9%9D%A2%E5%90%91%E4%BB%96%E4%BA%BA%E8%AE%B2%E8%A7%A3/</link>
+      <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/code_trail-cuda-%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%BB%84%E6%88%90-%E9%9D%A2%E5%90%91%E4%BB%96%E4%BA%BA%E8%AE%B2%E8%A7%A3/</guid>
+      <description>&lt;h2 id=&#34;很棒的资料&#34;&gt;很棒的资料&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://jamesakl.com/posts/cuda-ontology/&#34;&gt;https://jamesakl.com/posts/cuda-ontology/&lt;/a&gt; 详细系统讲解了CUDA整体&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;从顶往下gpu-软件栈的层次结构&#34;&gt;从顶往下：GPU 软件栈的层次结构&lt;/h2&gt;
+&lt;p&gt;可以把 CUDA 系统理解成&lt;strong&gt;从硬件到应用的四层结构&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;┌──────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│ 你的深度学习程序 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;PyTorch / TensorFlow&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; │ ← 应用层
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├──────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│ CUDA Toolkit / cuDNN / cuBLAS / 驱动API │ ← 开发与加速库层
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├──────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│ NVIDIA 驱动 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Driver&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; │ ← 驱动层
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├──────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;│ GPU 硬件 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2080&lt;/span&gt; Ti 等&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; │ ← 硬件层
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;└──────────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;“我的 Python 程序通过 PyTorch 调用 CUDA Runtime API，&lt;/strong&gt;
+&lt;strong&gt;CUDA Runtime 依赖 NVIDIA 驱动与硬件通信，&lt;/strong&gt;
+&lt;strong&gt;驱动再控制显卡完成底层计算。”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“CUDA 生态是一整套 GPU 加速栈：&lt;/strong&gt;
+&lt;strong&gt;从最底层的硬件到驱动，再到 Toolkit 和加速库，最后被深度学习框架调用。&lt;/strong&gt;
+&lt;strong&gt;驱动连接硬件，Toolkit 提供编译和库接口，&lt;/strong&gt;
+&lt;strong&gt;框架调用这些接口完成并行计算。”&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>泪水之城的艺术风格</title>
+      <link>http://localhost:1313/posts/other_record-%E6%B3%AA%E6%B0%B4%E4%B9%8B%E5%9F%8E%E7%9A%84%E8%89%BA%E6%9C%AF%E9%A3%8E%E6%A0%BC/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/other_record-%E6%B3%AA%E6%B0%B4%E4%B9%8B%E5%9F%8E%E7%9A%84%E8%89%BA%E6%9C%AF%E9%A3%8E%E6%A0%BC/</guid>
+      <description>&lt;h2 id=&#34;泪水之城描述&#34;&gt;泪水之城描述&lt;/h2&gt;
+&lt;p&gt;如&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一座由繁华转为死寂的城市，总是下着雨&lt;/li&gt;
+&lt;li&gt;阴暗的小巷，总是潮湿多雨，高耸入云/不切实际的尖塔，幽深的地下城&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;风格&#34;&gt;风格?&lt;/h2&gt;
+&lt;p&gt;搜索失败了，并没有准确的答案。&lt;/p&gt;
+&lt;p&gt;reddit上确实有相关讨论，但是都是模糊模棱两可的&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;感觉最像的是哥特式
+&lt;!-- raw HTML omitted --&gt;城市：Prague&lt;/p&gt;
+&lt;p&gt;如果天气是雨天就更好了。这种感觉绝了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一位似乎是艺术领域或者爱好者？的回答
+《空洞骑士》中的几种设计可能受到了历史悠久的维多利亚式建筑（更多例子）和第二帝国风格的启发，带有巴洛克和哥特式的影响和风格，并带有一丝新艺术风格。
+是的，维多利亚式，高耸的尖塔，笔直的墙壁&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Homebrew</title>
+      <link>http://localhost:1313/posts/code_trail-homebrew/</link>
+      <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/code_trail-homebrew/</guid>
+      <description>&lt;p&gt;mac里的一款软件、包管理工具，提供快捷的依赖关系整理&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装命令「使用官网脚本安装」：&lt;code&gt;/bin/bash -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;检查：&lt;code&gt;brew --version&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用{例}：&lt;code&gt;brew install mysql&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;首次配置参考教程：https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
+注意&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;配置brew本身的镜像源「否则其自身的update将会很慢」&lt;/li&gt;
+&lt;li&gt;配置仓库的镜像源「否则其下载会很慢」&lt;/li&gt;
+&lt;li&gt;dfsg&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
   </channel>
 </rss>

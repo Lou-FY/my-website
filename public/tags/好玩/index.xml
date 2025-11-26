@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>好玩 on LouFY&#39;Log</title>
+    <link>http://localhost:1313/tags/%E5%A5%BD%E7%8E%A9/</link>
+    <description>Recent content in 好玩 on LouFY&#39;Log</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 26 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%A5%BD%E7%8E%A9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「你怎么能直接...」</title>
+      <link>http://localhost:1313/posts/%E4%B8%AA%E4%BA%BA-%E4%BD%A0%E6%80%8E%E4%B9%88%E8%83%BD%E7%9B%B4%E6%8E%A5.../</link>
+      <pubDate>Wed, 26 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E4%B8%AA%E4%BA%BA-%E4%BD%A0%E6%80%8E%E4%B9%88%E8%83%BD%E7%9B%B4%E6%8E%A5.../</guid>
+      <description>&lt;p&gt;有好多版本，好有意思&lt;/p&gt;
+&lt;h2 id=&#34;git&#34;&gt;git&lt;/h2&gt;
+&lt;p&gt;你怎么能直接 commit 到我的 main 分支啊？！GitHub 上不是这样！你应该先 fork 我的仓库，然后从 develop 分支 checkout 一个新的 feature 分支，比如叫 feature/confession。然后你把你的心意写成代码，并为它写好单元测试和集成测试，确保代码覆盖率达到95%以上。接着你要跑一下 Linter，通过所有的代码风格检查。然后你再 commit，commit message 要遵循 Conventional Commits 规范。之后你把这个分支 push 到你自己的远程仓库，然后给我提一个 Pull Request。在 PR 描述里，你要详细说明你的功能改动和实现思路，并且 @ 我和至少两个其他的评审。我们会 review 你的代码，可能会留下一些评论，你需要解决所有的 thread。等 CI/CD 流水线全部通过，并且拿到至少两个 LGTM 之后，我才会考虑把你的分支 squash and merge 到 develop 里，等待下一个版本发布。你怎么直接上来就想 force push 到 main？！GitHub 上根本不是这样！我拒绝合并！&lt;/p&gt;
+&lt;h2 id=&#34;rag系统&#34;&gt;RAG系统&lt;/h2&gt;
+&lt;p&gt;你怎么能直接 client.chat.completions.create 去调大模型啊？！企业级 RAG 系统里不是这样！你应该先通过 ETL 流水线把 PDF 和 PPT 清洗一遍，跑一遍 OCR 和 Layout Analysis 提取图片里的图表信息。接着你要用 Recursive Character Text Splitter 按照语义完整性做 Chunking，并调用 CLIP 或者 BGE-M3 模型生成多模态 Embeddings。然后你要把这些高维向量存进 Milvus 或者 Weaviate，构建好 HNSW 索引。接着用户提问的时候，你要先做 Query Rewriting，生成多路查询，去走一遍 Hybrid Search，同时结合 BM25 关键词和 Dense Vector 召回 Top-K 文档。然后你要过一遍 Cross-Encoder 的 Reranker 模型，把 Relevancy Score 低的脏数据过滤掉。之后你把这些图文切片按照 Token Limit 精心塞进 Prompt Template 的 Context Window 里，并严格要求模型基于引用回答。在生成 Response 之前，你要跑一遍 Guardrails 甚至用 RAGAS 框架做一轮评估，检查有没有幻觉，确保 Faithfulness 和 Answer Relevance 分数达标。等 Grounding Check 全部通过，并且没有触发 Sensitive Word Filter 之后，我才会考虑把 token 一个个 stream 推回给前端，等待用户反馈。你怎么直接上来就想裸调 API 靠模型瞎编？！知识库增强根本不是这样！我拒绝生成！&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
