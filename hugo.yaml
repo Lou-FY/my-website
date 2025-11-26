@@ -1,0 +1,65 @@
+baseURL: "https://loufy03.com/"
+title: "LouFY'Log"
+theme: ["PaperMod"]
+
+pagination:
+  pagerSize: 5
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "LouFY'Log"
+  description: "飞宇的学习记录、阅读和碎碎念"
+  keywords: ["Blog", "Notes", "PaperMod"]
+  author: "Lou Feiyu"
+  DateFormat: "2006-01-02"
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+
+  homeInfoParams:
+    Title: "👋 Welcome to LouFY'Log"
+    Content: >
+      Hi, this is LouFY.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/Lou-FY"
+    - name: rss
+      url: "index.xml"
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: archives
+      name: Archive
+      url: /archives/
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 30
+    - identifier: faq
+      name: FAQ
+      url: /faq/
+      weight: 40
+caches:
+  images:
+    dir: :cacheDir/images
