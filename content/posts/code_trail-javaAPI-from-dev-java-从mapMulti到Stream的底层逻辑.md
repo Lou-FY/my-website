@@ -135,3 +135,59 @@ IO.println("ints = " + ints);
 
    
 
+## 终止操作之后，处理元素的方式？
+
+都是一个元素一个元素处理的么？
+
+1. 如map、filter都是逐元素的、无状态的「和之前的经过无关」
+
+   - `来一个->处理一下->传一个`
+
+2. 如sorted、distinct是有状态的
+
+   - distinct通过存一张set来进行重复元素去除；sorted通过新建list等来进行排序
+
+     - 但distinct：`来一个->通过了->就往下传一个`
+
+     - 但sorted：因为要排序，需要等上游元素全到了，再进行排。`上游元素不齐->不传`
+       ```java
+       ///sorted伪代码
+       // 1. 先把上游所有元素收集起来
+       List<T> buffer = new ArrayList<>();
+       upstream.forEach(buffer::add);  // 如果是无限流，这步永远不会结束
+       
+       // 2. 排序
+       Collections.sort(buffer);
+       
+       // 3. 再一个个往下游传
+       for (T t : buffer) {
+           downstream.accept(t);
+       }
+       ```
+
+3. `limit(max)`：来一个放行一个，但会在内部进行计数，通过的数量达到max了，就截断，不再向上游要数据，如果下游有sorted，就会进行排序
+
+```java
+///不会有结果
+var ints =IntStream.iterate(0,i->i+1)
+                .map(i->i+3)
+                .distinct()
+                .sorted()
+                .limit(5)//放在这里
+                .toArray();
+///有结果
+var ints =IntStream.iterate(0,i->i+1)
+                .map(i->i+3)
+  							.limit(5)//放在这里
+                .distinct()
+                .sorted()
+                .toArray();
+```
+
+
+
+## log
+
+- 2025-11-30-20:27:21
+  - 增加“终止操作之后，处理元素的方式？”段落
+
