@@ -55,7 +55,7 @@ java Demo.java
 - <u>JDK官方的各种类</u>
   - **`bootstrap loader`**——用getClassLoader()查看ClassLoader，会返回null
 - <u>自定义类</u>
-  - 可能是**`AppClassLoader`**也可能是**`MemoryClassLoader`**
+  - 可能是**`MemoryClassLoader`**也可能是**`AppClassLoader`**
     - 前者是当直接单文件运行 `java Demo.java` 会使用的
     - 后者是当先`javac`编译，然后再`java` 执行会使用的
 
