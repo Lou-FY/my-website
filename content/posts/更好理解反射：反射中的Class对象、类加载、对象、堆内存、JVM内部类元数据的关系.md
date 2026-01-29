@@ -58,7 +58,7 @@ publish: true
 
 1. <u>Person 实例（普通对象）</u>：第一次遇到调用时，new出来时，创建运行在堆内存上。
 2. <u>Java内部类、核心类</u>：如`java.lang.Object`、`java.lang.String`这些，由 bootstrap class loader 在 JVM 启动早期就加载
-3. <u>JVM 内部“类元数据结构”</u>：如自定义类这些，在第一次引用类加载过程中由 JVM 创建并维护，通常存放在 JVM 的元数据区域。由ClassLoader 加载字节码后生成
+3. <u>JVM 内部“类元数据结构”</u>：如自定义类这些，在第一次引用类加载过程中由 JVM 创建并维护，通常存放在 JVM 的元数据区域。**由ClassLoader 加载字节码后生成**[7.1-反射-intro](../../javaAPI-from-dev-java/7.1-反射-intro.md) 、 [从 “单文件运行java Foo.java”说起：ClassLoader 与 Java 的“类型身份](../../javaAPI-from-dev-java/从%20“单文件运行java%20Foo.java”说起：ClassLoader%20与%20Java%20的“类型身份.md)
 4. <u>`java.lang.Class` 对象</u>：本身是一个**堆对象**，在某个类型被加载时，JVM除了创建维护那些元数据区域外，会在堆里准备一个对应的Class 对象。（作为 Java 层访问类元数据的“门面/句柄”）
 5. 实例字段与静态字段：实例字段在每个对象的实例数据里（每个对象一份）；静态字段在“类”那里，位于“类的静态存储区”里（每个类一份）
 
